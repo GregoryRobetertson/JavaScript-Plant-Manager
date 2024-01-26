@@ -4,21 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript-Plant-Manager</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <form id="plantForm">
       <label for="plantName">Plant Name:</label>
-      <input type="text" id="plantName" required />
+      <input
+        type="text"
+        id="plantName"
+        required
+        placeholder="Enter plant name"
+      />
+      <span id="nameError" style="color: red"></span>
 
       <label for="plantSpecies">Plant Species:</label>
-      <input type="text" id="plantSpecies" required />
+      <input
+        type="text"
+        id="plantSpecies"
+        required
+        placeholder="Enter plant species"
+      />
+      <span id="speciesError" style="color: red"></span>
 
       <label for="waterSchedule">Water Schedule:</label>
-      <input type="text" id="waterSchedule" required />
+      <input
+        type="text"
+        id="waterSchedule"
+        required
+        placeholder="Enter water schedule"
+      />
+      <span id="waterScheduleError" style="color: red"></span>
 
       <button>Add Plant</button>
     </form>
-     <div id="plantList"></div>
+    <div id="plantList"></div>
     <script src="script.js"></script>
   </body>
 </html>

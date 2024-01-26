@@ -46,6 +46,36 @@ function displayPlants() {
 function addPlant(name, species, waterSchedule) {
   const newPlant = { name, species, waterSchedule };
 
+  // Check if all fields are empty
+  if (!name && !species && !waterSchedule) {
+    alert("Please fill in the form"); // Display an alert for an empty form
+    return; // Exit the function if the form is empty
+  }
+
+  // Get error message spans
+  const nameError = document.getElementById("nameError");
+  const speciesError = document.getElementById("speciesError");
+  const waterScheduleError = document.getElementById("waterScheduleError");
+
+  // Check for validation errors
+  if (!name) {
+    nameError.textContent = "Please enter a name";
+    document.getElementById("plantName").classList.add("error");
+    return;
+  }
+
+  if (!species) {
+    speciesError.textContent = "Please enter a species";
+    document.getElementById("plantSpecies").classList.add("error");
+    return;
+  }
+
+  if (!waterSchedule) {
+    waterScheduleError.textContent = "Please enter a water schedule";
+    document.getElementById("waterSchedule").classList.add("error");
+    return;
+  }
+
   // Add the new plant object to the array
   plantsArray.push(newPlant);
 
